@@ -1,5 +1,6 @@
 package com.example.bilha
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -24,6 +25,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -45,6 +47,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun demo(){
+
+    val mContext= LocalContext.current
+
     Column(modifier= Modifier
         .fillMaxSize()
         .padding(20.dp)) {
@@ -124,6 +129,22 @@ fun demo(){
             Text(text = "Bordered button")
 
         }
+
+        Spacer(modifier = Modifier.height(50.dp))
+        //Intent
+        Button(onClick = {
+            mContext.startActivity(Intent(mContext,ImageActivity::class.java))
+
+        },
+        shape = CutCornerShape(5.dp),
+        colors = ButtonDefaults.buttonColors(Color.DarkGray),
+        modifier = Modifier.padding(start = 150.dp)
+        ) {
+            Text(text = "Next", color = Color.White)
+
+        }
+            
+        
 
         }
 
