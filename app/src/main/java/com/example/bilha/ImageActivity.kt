@@ -14,10 +14,19 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -41,13 +50,57 @@ class ImageActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun myimage() {
 
-    val mContext= LocalContext.current
-    Column(modifier = Modifier
-        .fillMaxSize()
-        .padding(10.dp)) {
+    val mContext = LocalContext.current
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+    )
+    {
+        //TopAppBar
+        TopAppBar(title = {Text(text = "FormPage", fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif )},
+            colors= TopAppBarDefaults.largeTopAppBarColors(Color.Cyan),
+            navigationIcon = {
+                IconButton(onClick = {
+                    mContext.startActivity(
+                        Intent(
+                            mContext,
+                            Intent::class.java
+                        )
+                    )
+                }) {
+                    androidx.compose.material3.Icon(
+                        imageVector = Icons.Filled.ArrowBack,
+                        contentDescription = "arrowback"
+                    )
+
+                }
+
+            },
+            actions = {
+
+                IconButton(onClick = {/*TODO*/ }) {
+                    androidx.compose.material3.Icon(
+                        imageVector = Icons.Filled.Share,
+                        contentDescription = "share"
+                    )
+
+
+                }
+                IconButton(onClick = {/*TODO*/ }) {
+                    androidx.compose.material3.Icon(
+                        imageVector = Icons.Filled.Settings,
+                        contentDescription = "settings"
+                    )
+
+                }
+            })
+
+
+
         Text(
             text = "BREEDS OF DOGS",
             fontSize = 30.sp,
@@ -71,8 +124,10 @@ fun myimage() {
                     text = "BULLDOG",
                     fontSize = 20.sp,
                 )
-                Text(text = "The dog is a domestic animal",
-                fontSize = 20.sp)
+                Text(
+                    text = "The dog is a domestic animal",
+                    fontSize = 20.sp
+                )
 
             }
 
@@ -91,8 +146,10 @@ fun myimage() {
                     text = "GERMAN SHEPHERED",
                     fontSize = 20.sp,
                 )
-                Text(text = "The dog is a domestic animal",
-                fontSize = 20.sp)
+                Text(
+                    text = "The dog is a domestic animal",
+                    fontSize = 20.sp
+                )
             }
 
         }
@@ -111,34 +168,39 @@ fun myimage() {
                     text = "SIBERIAN HUSKY ",
                     fontSize = 20.sp,
                 )
-                Text(text = "The dog is a domestic animal",
-                fontSize = 20.sp)
+                Text(
+                    text = "The dog is a domestic animal",
+                    fontSize = 20.sp
+                )
 
             }
         }
         Spacer(modifier = Modifier.height(20.dp))
         //Circular image
-        Image(painter = painterResource(id = R.drawable.img), contentDescription ="image",
-        modifier = Modifier
-            .size(128.dp)
-            .clip(shape = CircleShape),
-        contentScale = ContentScale.Crop)
+        Image(
+            painter = painterResource(id = R.drawable.img_2), contentDescription = "image",
+            modifier = Modifier
+                .size(128.dp)
+                .clip(shape = CircleShape),
+            contentScale = ContentScale.Crop
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = {
-            mContext.startActivity(Intent(mContext,ScrollActivity::class.java))
-        },
-        shape = CutCornerShape(5.dp),
+        Button(
+            onClick = {
+                mContext.startActivity(Intent(mContext, ScrollActivity::class.java))
+            },
+            shape = CutCornerShape(5.dp),
             modifier = Modifier.padding(start = 150.dp)
         ) {
 
-            Text(text = "Next")
-            
+            Text(text = "Next", color = Color.White)
+
         }
 
     }
-}
 
+}
 
 @Preview(showBackground = true)
 @Composable

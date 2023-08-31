@@ -13,6 +13,49 @@
         android:theme="@style/Theme.Bilha"
         tools:targetApi="31">
         <activity
+            android:name=".LottieAnimationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_lottie_animation"
+            android:theme="@style/Theme.Bilha">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:label="Bilha"
+            android:theme="@style/Theme.Bilha">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PracticalActivity"
+            android:exported="true"
+            android:label="@string/title_activity_practical"
+            android:theme="@style/Theme.Bilha">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntentActivity"
+            android:exported="true"
+            android:label="@string/title_activity_intent"
+            android:theme="@style/Theme.Bilha" />
+        <activity
+            android:name=".FormActivity"
+            android:exported="true"
+            android:label="@string/title_activity_form"
+            android:theme="@style/Theme.Bilha" />
+        <activity
             android:name=".ScrollActivity"
             android:exported="false"
             android:label="@string/title_activity_scroll"
@@ -26,13 +69,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Bilha">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.Bilha"></activity>
     </application>
 
 </manifest>

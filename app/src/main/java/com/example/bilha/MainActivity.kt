@@ -87,7 +87,7 @@ fun demo(){
 
         }
         Spacer(modifier = Modifier.height(50.dp))
-        Row{
+        Row(){
             Text(text = "eMobilis", fontSize = 30.sp, color= Color.Gray)
 
             Spacer(modifier=Modifier.height(50.dp))
@@ -103,10 +103,12 @@ fun demo(){
             Text(text = "No")
         }
         //Button
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = {
+            mContext.startActivity(Intent(mContext,FormActivity::class.java))
+        },
         shape = RectangleShape,
         colors = ButtonDefaults.buttonColors(Color.Magenta)) {
-            Text(text = "Click Me")
+            Text(text = "Form")
 
         }
         Button(onClick = { /*TODO*/ },
@@ -133,18 +135,18 @@ fun demo(){
         Spacer(modifier = Modifier.height(50.dp))
         //Intent
         Button(onClick = {
-            mContext.startActivity(Intent(mContext,ImageActivity::class.java))
+            mContext.startActivity(Intent(mContext,LottieAnimationActivity::class.java))
 
         },
         shape = CutCornerShape(5.dp),
         colors = ButtonDefaults.buttonColors(Color.DarkGray),
         modifier = Modifier.padding(start = 150.dp)
         ) {
-            Text(text = "Next", color = Color.White)
+            Text(text = "Next", color = Color.White, fontSize = 20.sp)
 
         }
-            
-        
+
+
 
         }
 
