@@ -111,31 +111,37 @@ fun demo(){
             Text(text = "Form")
 
         }
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = {
+            mContext.startActivity(Intent(mContext,IntentActivity::class.java))
+
+        },
         shape = CutCornerShape(5.dp),
             colors = ButtonDefaults.buttonColors(Color.Yellow)
         ) {
             Image(painter = painterResource(id = R.drawable.img_4)
                  ,contentDescription = "")
-            Text(text = "Add to cart",
+            Text(text = "Intents",
                  modifier = Modifier.padding(start = 10.dp))
             
         }
         //Bordered button
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = {
+            mContext.startActivity(Intent(mContext,LottieAnimationActivity::class.java))
+
+        },
         shape = CutCornerShape(5.dp),
         border = BorderStroke(3.dp, Color.Red),
             colors = ButtonDefaults.outlinedButtonColors()
 
         ) {
-            Text(text = "Bordered button")
+            Text(text = "lottie")
 
         }
 
         Spacer(modifier = Modifier.height(50.dp))
         //Intent
         Button(onClick = {
-            mContext.startActivity(Intent(mContext,LottieAnimationActivity::class.java))
+            mContext.startActivity(Intent(mContext,ImageActivity::class.java))
 
         },
         shape = CutCornerShape(5.dp),

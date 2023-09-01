@@ -11,7 +11,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -42,7 +45,7 @@ class SplashScreenActivity : ComponentActivity() {
             val coroutineScope= rememberCoroutineScope()
             coroutineScope .launch(){
                 delay(1000)
-                mContext.startActivity(Intent(mContext,MainActivity::class.java))
+                mContext.startActivity(Intent(mContext,HomePageActivity::class.java))
                 finish()
             }
 
@@ -64,6 +67,18 @@ fun splash(){
         Text(text = "Legrande Hotel", fontSize = 60.sp,
             fontWeight = FontWeight.Bold, fontFamily = FontFamily.Cursive,
              color = Color.Cyan
+        )
+        //CircularProgressIndicator
+        CircularProgressIndicator(
+            modifier = Modifier.size(50.dp),
+            color = Color.Black,
+            strokeWidth = 5.dp
+        )
+        //LinearProgressIndicator
+        LinearProgressIndicator(
+            modifier = Modifier.padding(20.dp)
+                .height(10.dp),
+            color = Color.Cyan
         )
 
 

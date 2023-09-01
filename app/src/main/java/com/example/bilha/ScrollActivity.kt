@@ -60,15 +60,21 @@ class ScrollActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun cardDemo() {
-    val mContext= LocalContext.current
+    val mContext = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
     ) {
         //TopAppBar
-        TopAppBar(title = {Text(text = "Imagepage", fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif )},
-            colors= TopAppBarDefaults.largeTopAppBarColors(Color.Cyan),
+        TopAppBar(title = {
+            Text(
+                text = "Imagepage",
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.SansSerif
+            )
+        },
+            colors = TopAppBarDefaults.largeTopAppBarColors(Color.Cyan),
             navigationIcon = {
                 IconButton(onClick = {
                     mContext.startActivity(
@@ -101,7 +107,7 @@ fun cardDemo() {
                 }
 
 
-        })
+            })
 
 
         Text(
@@ -112,9 +118,10 @@ fun cardDemo() {
         )
 
 
-        Text(text = "TYPES OF FRUITS",
-        fontSize = 30.sp,
-        color = Color.Black,
+        Text(
+            text = "TYPES OF FRUITS",
+            fontSize = 30.sp,
+            color = Color.Black,
             fontWeight = FontWeight.Bold
         )
         //Row1
@@ -188,7 +195,7 @@ fun cardDemo() {
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
 
-                    )
+                        )
 
 
                 }
@@ -200,7 +207,8 @@ fun cardDemo() {
 
         Spacer(modifier = Modifier.width(10.dp))
 
-        Text(text = "BEEDS OF ANIMALS",
+        Text(
+            text = "BEEDS OF ANIMALS",
             fontSize = 30.sp,
             color = Color.Black,
             fontWeight = FontWeight.Bold
@@ -288,7 +296,8 @@ fun cardDemo() {
 
         Spacer(modifier = Modifier.width(10.dp))
 
-        Text(text = "TYPES OF DRESSES",
+        Text(
+            text = "TYPES OF DRESSES",
             fontSize = 30.sp,
             color = Color.Black,
             fontWeight = FontWeight.Bold
@@ -374,7 +383,8 @@ fun cardDemo() {
 
         Spacer(modifier = Modifier.width(10.dp))
 
-        Text(text = "TYPES OF AFRICAN FOODS",
+        Text(
+            text = "TYPES OF AFRICAN FOODS",
             fontSize = 30.sp,
             color = Color.Black,
             fontWeight = FontWeight.Bold
@@ -414,7 +424,6 @@ fun cardDemo() {
                         fontWeight = FontWeight.Bold
                     )
 
-                }
             }
             Spacer(modifier = Modifier.width(10.dp))
             //Third card
@@ -460,7 +469,8 @@ fun cardDemo() {
 
         Spacer(modifier = Modifier.width(10.dp))
 
-        Text(text = "TYPES OF LADIES SHOES",
+        Text(
+            text = "TYPES OF LADIES SHOES",
             fontSize = 30.sp,
             color = Color.Black,
             fontWeight = FontWeight.Bold
@@ -543,110 +553,103 @@ fun cardDemo() {
             }
 
 
-        Spacer(modifier = Modifier.width(10.dp))
-
-        Text(text = "TYPES OF VEHICLES",
-            fontSize = 30.sp,
-            color = Color.Black,
-            fontWeight = FontWeight.Bold)
-
-        //Row6
-        Row(modifier = Modifier.horizontalScroll(rememberScrollState())) {
-            //First card
-            Card(modifier = Modifier.size(200.dp)) {
-                Column(modifier = Modifier.padding(10.dp)) {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_5),
-                        contentDescription = "",
-                        modifier = Modifier.size(100.dp)
-                    )
-                    Text(
-                        text = "PRADO",
-                        fontSize = 20.sp,
-                        color = Color.Black,
-                        fontWeight = FontWeight.Bold
-                    )
-
-                }
-            }
             Spacer(modifier = Modifier.width(10.dp))
-            //Second card
-            Card(modifier = Modifier.size(200.dp)) {
-                Column(modifier = Modifier.padding(10.dp)) {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_6),
-                        contentDescription = "",
-                        modifier = Modifier.size(100.dp)
-                    )
-                    Text(
-                        text = "MAZDA",
-                        fontSize = 20.sp,
-                        color = Color.Black,
-                        fontWeight = FontWeight.Bold
-                    )
 
+            Text(
+                text = "TYPES OF VEHICLES",
+                fontSize = 30.sp,
+                color = Color.Black,
+                fontWeight = FontWeight.Bold
+            )
+
+            //Row6
+            Row(modifier = Modifier.horizontalScroll(rememberScrollState())) {
+                //First card
+                Card(modifier = Modifier.size(200.dp)) {
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_5),
+                            contentDescription = "",
+                            modifier = Modifier.size(100.dp)
+                        )
+                        Text(
+                            text = "PRADO",
+                            fontSize = 20.sp,
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold
+                        )
+
+                    }
                 }
-            }
-            Spacer(modifier = Modifier.width(10.dp))
-            //Third card
-            Card(modifier = Modifier.size(200.dp)) {
-                Column(modifier = Modifier.padding(10.dp)) {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_7),
-                        contentDescription = "",
-                        modifier = Modifier.size(100.dp)
-                    )
-                    Text(
-                        text = "MITSUBISHI",
-                        fontSize = 20.sp,
-                        color = Color.Black,
-                        fontWeight = FontWeight.Bold
+                Spacer(modifier = Modifier.width(10.dp))
+                //Second card
+                Card(modifier = Modifier.size(200.dp)) {
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_6),
+                            contentDescription = "",
+                            modifier = Modifier.size(100.dp)
+                        )
+                        Text(
+                            text = "MAZDA",
+                            fontSize = 20.sp,
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold
+                        )
 
-                    )
-
+                    }
                 }
-            }
-            Spacer(modifier = Modifier.width(10.dp))
-            //fourth card
-            Card(modifier = Modifier.size(200.dp)) {
-                Column(modifier = Modifier.padding(10.dp)) {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_8),
-                        contentDescription = "",
-                        modifier = Modifier.size(100.dp)
-                    )
-                    Text(
-                        text = "TOYOTA",
-                        fontSize = 20.sp,
-                        color = Color.Black,
-                        fontWeight = FontWeight.Bold,
+                Spacer(modifier = Modifier.width(10.dp))
+                //Third card
+                Card(modifier = Modifier.size(200.dp)) {
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_7),
+                            contentDescription = "",
+                            modifier = Modifier.size(100.dp)
+                        )
+                        Text(
+                            text = "MITSUBISHI",
+                            fontSize = 20.sp,
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold
 
                         )
 
-
+                    }
                 }
             }
+                Spacer(modifier = Modifier.width(10.dp))
+                //fourth card
+                Card(modifier = Modifier.size(200.dp)) {
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_8),
+                            contentDescription = "",
+                            modifier = Modifier.size(100.dp)
+                        )
+                        Text(
+                            text = "TOYOTA",
+                            fontSize = 20.sp,
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold,
+
+                            )
 
 
+                    }
+                }
 
-        }
-        Spacer(modifier = Modifier.width(5.dp))
-        Button(onClick = {
-            mContext.startActivity(Intent(mContext,ScrollActivity::class.java))
-        },
-            shape = CutCornerShape(5.dp),
-            modifier = Modifier.padding(start = 150.dp)
-        ) {
 
-            Text(text = "Next", color = Color.White)
+            }
 
-        }
             Spacer(modifier = Modifier.height(50.dp))
             //Intent
-            Button(onClick = {
-                mContext.startActivity(Intent(mContext,FormActivity::class.java))
+            Button(
+                onClick = {
+                    mContext.startActivity(Intent(mContext, FormActivity::class.java))
 
-            },
+                },
                 shape = CutCornerShape(5.dp),
                 colors = ButtonDefaults.buttonColors(Color.DarkGray),
                 modifier = Modifier.padding(start = 150.dp)
@@ -656,12 +659,11 @@ fun cardDemo() {
             }
 
 
-
-
-
+        }
     }
 
-}}
+}
+
 
 
 @Preview(showBackground = true)

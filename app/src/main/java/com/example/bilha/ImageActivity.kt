@@ -188,7 +188,7 @@ fun myimage() {
         Spacer(modifier = Modifier.height(20.dp))
         Button(
             onClick = {
-                mContext.startActivity(Intent(mContext, ScrollActivity::class.java))
+                mContext.startActivity(Intent(mContext,ScrollActivity::class.java))
             },
             shape = CutCornerShape(5.dp),
             modifier = Modifier.padding(start = 150.dp)

@@ -75,16 +75,22 @@ fun work() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())) {
+    ) {
 
         //TopAppBar
-        TopAppBar(title = {Text(text = "JUMIA", fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif )},
-            colors= TopAppBarDefaults.largeTopAppBarColors(Color.Cyan),
+        TopAppBar(title = {
+            Text(
+                text = "JUMIA",
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.SansSerif
+            )
+        },
+            colors = TopAppBarDefaults.largeTopAppBarColors(Color.Cyan),
             navigationIcon = {
                 IconButton(onClick = {
                     mContext.startActivity(
                         Intent(
-                           mContext,
+                            mContext,
                             Intent::class.java
                         )
                     )
@@ -99,10 +105,12 @@ fun work() {
             },
             actions = {
 
-                IconButton(onClick = {val shareIntent=Intent(Intent.ACTION_SEND)
-                    shareIntent.type="text/plain"
-                    shareIntent.putExtra(Intent.EXTRA_TEXT,"Check out this is our company")
-                    mContext.startActivity(Intent.createChooser(shareIntent,"Share")) }) {
+                IconButton(onClick = {
+                    val shareIntent = Intent(Intent.ACTION_SEND)
+                    shareIntent.type = "text/plain"
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this is our company")
+                    mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
+                }) {
                     androidx.compose.material3.Icon(
                         imageVector = Icons.Filled.Share,
                         contentDescription = "share"
@@ -110,8 +118,10 @@ fun work() {
 
 
                 }
-                IconButton(onClick = { val settingsIntent=Intent(Settings.ACTION_SEARCH_SETTINGS)
-                    mContext.startActivity(settingsIntent)}) {
+                IconButton(onClick = {
+                    val settingsIntent = Intent(Settings.ACTION_SEARCH_SETTINGS)
+                    mContext.startActivity(settingsIntent)
+                }) {
                     androidx.compose.material3.Icon(
                         imageVector = Icons.Filled.Settings,
                         contentDescription = "settings"
@@ -123,205 +133,232 @@ fun work() {
             })
         Spacer(modifier = Modifier.height(10.dp))
 
-      OutlinedTextField(value = search,
-          onValueChange ={search=it},
-      modifier = Modifier
-          .fillMaxWidth()
-          .padding(start = 10.dp, end = 10.dp),
-      leadingIcon = { Icon(imageVector = Icons.Default.Search,contentDescription = "search")},
-          keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Search),
-      placeholder = { Text(text = "Search....")}
-      )
+        OutlinedTextField(value = search,
+            onValueChange = { search = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 10.dp, end = 10.dp),
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Default.Search,
+                    contentDescription = "search"
+                )
+            },
+            keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Search),
+            placeholder = { Text(text = "Search....") }
+        )
         Spacer(modifier = Modifier.height(10.dp))
 
-        Text(text = "THE BEST PLACE TO SHOP",
-        fontSize = 15.sp, fontWeight = FontWeight.Bold, modifier = Modifier.height(20.dp))
+        Text(
+            text = "THE BEST PLACE TO SHOP",
+            fontSize = 15.sp, fontWeight = FontWeight.Bold, modifier = Modifier.height(20.dp)
+        )
 
         Spacer(modifier = Modifier.height(15.dp))
+
+        Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+
+
 //Row1
-        Row(modifier = Modifier
-            .padding(start = 10.dp)
-            .horizontalScroll(rememberScrollState())){
-            Card() {
-                Column {
-                    Image(painter = painterResource(id = R.drawable.img_29),
-                        contentDescription = "",
-                    modifier = Modifier.size(180.dp))
+            Row(
+                modifier = Modifier
+                    .padding(start = 10.dp)
+                    .horizontalScroll(rememberScrollState())
+            ) {
+                Card() {
+                    Column {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_29),
+                            contentDescription = "",
+                            modifier = Modifier.size(180.dp)
+                        )
 
-                    Text(text = "Name:Alison", fontSize = 15.sp)
-                    Text(text = "Origin:NewYork", fontSize = 15.sp)
-                    Text(text = "Price;Ksh.6000", fontSize = 15.sp)
-                    Button(onClick = {
-                        val simToolkitLaunchIntent=
-                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                        simToolkitLaunchIntent?.let { mContext.startActivity(it) }
+                        Text(text = "Name:Alison", fontSize = 15.sp)
+                        Text(text = "Origin:NewYork", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Button(
+                            onClick = {
+                                val simToolkitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                simToolkitLaunchIntent?.let { mContext.startActivity(it) }
 
-                    },
-                        colors = ButtonDefaults.buttonColors(Color.Green),
-                         shape = RectangleShape){
-                        Text(text = "Buy")
+                            },
+                            colors = ButtonDefaults.buttonColors(Color.Green),
+                            shape = RectangleShape
+                        ) {
+                            Text(text = "Buy")
 
 
-                    }
-
-                    
-                }
-                
-            }
-            Spacer(modifier = Modifier.width(15.dp))
-
-            Card() {
-                Column {
-                    Image(painter = painterResource(id = R.drawable.img_29),
-                        contentDescription = "",
-                        modifier = Modifier.size(180.dp))
-
-                    Text(text = "Name:Alison", fontSize = 15.sp)
-                    Text(text = "Origin:NewYork", fontSize = 15.sp)
-                    Text(text = "Price;Ksh.6000", fontSize = 15.sp)
-                    Button(onClick = {
-                        val simToolkitLaunchIntent=
-                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                        simToolkitLaunchIntent?.let { mContext.startActivity(it) }
-
-                    },
-                        colors = ButtonDefaults.buttonColors(Color.Green),
-                        shape = RectangleShape){
-                        Text(text = "Buy")
+                        }
 
 
                     }
-
 
                 }
+                Spacer(modifier = Modifier.width(15.dp))
 
-            }
-            Spacer(modifier = Modifier.width(15.dp))
-            Card() {
-                Column {
-                    Image(painter = painterResource(id = R.drawable.img_29),
-                        contentDescription = "",
-                        modifier = Modifier.size(180.dp))
+                Card() {
+                    Column {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_29),
+                            contentDescription = "",
+                            modifier = Modifier.size(180.dp)
+                        )
 
-                    Text(text = "Name:Alison", fontSize = 15.sp)
-                    Text(text = "Origin:NewYork", fontSize = 15.sp)
-                    Text(text = "Price;Ksh.6000", fontSize = 15.sp)
-                    Button(onClick = {
-                        val simToolkitLaunchIntent=
-                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                        simToolkitLaunchIntent?.let { mContext.startActivity(it) }
+                        Text(text = "Name:Alison", fontSize = 15.sp)
+                        Text(text = "Origin:NewYork", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Button(
+                            onClick = {
+                                val simToolkitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                simToolkitLaunchIntent?.let { mContext.startActivity(it) }
 
-                    },
-                        colors = ButtonDefaults.buttonColors(Color.Green),
-                        shape = RectangleShape){
-                        Text(text = "Buy")
+                            },
+                            colors = ButtonDefaults.buttonColors(Color.Green),
+                            shape = RectangleShape
+                        ) {
+                            Text(text = "Buy")
+
+
+                        }
 
 
                     }
-
 
                 }
+                Spacer(modifier = Modifier.width(15.dp))
+                Card() {
+                    Column {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_29),
+                            contentDescription = "",
+                            modifier = Modifier.size(180.dp)
+                        )
 
-            }
+                        Text(text = "Name:Alison", fontSize = 15.sp)
+                        Text(text = "Origin:NewYork", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Button(
+                            onClick = {
+                                val simToolkitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                simToolkitLaunchIntent?.let { mContext.startActivity(it) }
 
-        }
-        Spacer(modifier = Modifier.height(10.dp))
+                            },
+                            colors = ButtonDefaults.buttonColors(Color.Green),
+                            shape = RectangleShape
+                        ) {
+                            Text(text = "Buy")
 
-        //Row2
-        //card1
 
-        Row(modifier = Modifier
-            .padding(start = 10.dp)
-            .horizontalScroll(rememberScrollState())) {
-            Card() {
-                Column {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_29),
-                        contentDescription = "",
-                        modifier = Modifier.size(180.dp)
-                    )
-
-                    Text(text = "Name:Alison", fontSize = 15.sp)
-                    Text(text = "Origin:NewYork", fontSize = 15.sp)
-                    Text(text = "Price;Ksh.6000", fontSize = 15.sp)
-                    Button(
-                        onClick = {
-                            val simToolkitLaunchIntent =
-                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                            simToolkitLaunchIntent?.let { mContext.startActivity(it) }
-
-                        },
-                        colors = ButtonDefaults.buttonColors(Color.Green),
-                        shape = RectangleShape
-                    ) {
-                        Text(text = "Buy")
+                        }
 
 
                     }
-
 
                 }
 
             }
-            Spacer(modifier = Modifier.width(15.dp))
-            //card2
+            Spacer(modifier = Modifier.height(10.dp))
 
-            Card() {
-                Column {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_29),
-                        contentDescription = "",
-                        modifier = Modifier.size(180.dp)
-                    )
+            //Row2
+            //card1
 
-                    Text(text = "Name:Alison", fontSize = 15.sp)
-                    Text(text = "Origin:NewYork", fontSize = 15.sp)
-                    Text(text = "Price;Ksh.6000", fontSize = 15.sp)
-                    Button(
-                        onClick = {
-                            val simToolkitLaunchIntent =
-                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                            simToolkitLaunchIntent?.let { mContext.startActivity(it) }
+            Row(
+                modifier = Modifier
+                    .padding(start = 10.dp)
+                    .horizontalScroll(rememberScrollState())
+            ) {
+                Card() {
+                    Column {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_29),
+                            contentDescription = "",
+                            modifier = Modifier.size(180.dp)
+                        )
 
-                        },
-                        colors = ButtonDefaults.buttonColors(Color.Green),
-                        shape = RectangleShape
-                    ) {
-                        Text(text = "Buy")
+                        Text(text = "Name:Alison", fontSize = 15.sp)
+                        Text(text = "Origin:NewYork", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Button(
+                            onClick = {
+                                val simToolkitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                simToolkitLaunchIntent?.let { mContext.startActivity(it) }
+
+                            },
+                            colors = ButtonDefaults.buttonColors(Color.Green),
+                            shape = RectangleShape
+                        ) {
+                            Text(text = "Buy")
+
+
+                        }
 
 
                     }
-
 
                 }
+                Spacer(modifier = Modifier.width(15.dp))
+                //card2
 
-            }
-            Spacer(modifier = Modifier.width(15.dp))
+                Card() {
+                    Column {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_29),
+                            contentDescription = "",
+                            modifier = Modifier.size(180.dp)
+                        )
 
-            //card3
-            Card() {
-                Column {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_29),
-                        contentDescription = "",
-                        modifier = Modifier.size(180.dp)
-                    )
+                        Text(text = "Name:Alison", fontSize = 15.sp)
+                        Text(text = "Origin:NewYork", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Button(
+                            onClick = {
+                                val simToolkitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                simToolkitLaunchIntent?.let { mContext.startActivity(it) }
 
-                    Text(text = "Name:Alison", fontSize = 15.sp)
-                    Text(text = "Origin:NewYork", fontSize = 15.sp)
-                    Text(text = "Price;Ksh.6000", fontSize = 15.sp)
-                    Button(
-                        onClick = {
-                            val simToolkitLaunchIntent =
-                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                            simToolkitLaunchIntent?.let { mContext.startActivity(it) }
+                            },
+                            colors = ButtonDefaults.buttonColors(Color.Green),
+                            shape = RectangleShape
+                        ) {
+                            Text(text = "Buy")
 
-                        },
-                        colors = ButtonDefaults.buttonColors(Color.Green),
-                        shape = RectangleShape
-                    ) {
-                        Text(text = "Buy")
+
+                        }
+
+
                     }
+
+                }
+                Spacer(modifier = Modifier.width(15.dp))
+
+                //card3
+                Card() {
+                    Column {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_29),
+                            contentDescription = "",
+                            modifier = Modifier.size(180.dp)
+                        )
+
+                        Text(text = "Name:Alison", fontSize = 15.sp)
+                        Text(text = "Origin:NewYork", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Button(
+                            onClick = {
+                                val simToolkitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                simToolkitLaunchIntent?.let { mContext.startActivity(it) }
+
+                            },
+                            colors = ButtonDefaults.buttonColors(Color.Green),
+                            shape = RectangleShape
+                        ) {
+                            Text(text = "Buy")
+                        }
 
 
                     }
@@ -337,9 +374,11 @@ fun work() {
             //Row3
             //card1
 
-            Row(modifier = Modifier
-                .padding(start = 10.dp)
-                .horizontalScroll(rememberScrollState())) {
+            Row(
+                modifier = Modifier
+                    .padding(start = 10.dp)
+                    .horizontalScroll(rememberScrollState())
+            ) {
                 Card() {
                     Column {
                         Image(
@@ -398,10 +437,10 @@ fun work() {
                         }
 
 
-                        }
-
-
                     }
+
+
+                }
 
 
 
@@ -442,15 +481,12 @@ fun work() {
             }
 
 
-
-
         }
-
 
 
     }
 
-
+}
 
 
 

@@ -72,14 +72,11 @@ fun myIntent(){
        )
    ) {
        //TopAppBar
-       TopAppBar(title = {Text(text = "FormPage", fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif )},
+       TopAppBar(title = {Text(text = "IntentActivity", fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif )},
            colors= TopAppBarDefaults.largeTopAppBarColors(Color.Cyan),
            navigationIcon = {
                IconButton(onClick = {
-                   mContext.startActivity(
-                       Intent(
-                           mContext,
-                           Intent::class.java
+                   mContext.startActivity(Intent(mContext, ScrollActivity::class.java
                        )
                    )
                }) {
