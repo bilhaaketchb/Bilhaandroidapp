@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -176,6 +177,23 @@ fun items(){
             }
 
         }
+        Spacer(modifier = Modifier.height(20.dp))
+        Card(modifier = Modifier
+            .fillMaxWidth()
+            .padding(20.dp)
+            .clickable {
+                mContext.startActivity(Intent(mContext, ScrollActivity::class.java))
+            }) {
+            Row(modifier = Modifier.padding(20.dp)){
+                Text(text = "Scroll Page",
+                    fontSize = 20.sp,
+                    color = Color.Black,
+                    fontWeight = FontWeight.Bold)
+
+            }
+
+        }
+
 
 
     }

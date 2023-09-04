@@ -120,7 +120,7 @@ fun demo(){
         ) {
             Image(painter = painterResource(id = R.drawable.img_4)
                  ,contentDescription = "")
-            Text(text = "Intents",
+            Text(text = "Add to cart",
                  modifier = Modifier.padding(start = 10.dp))
             
         }
@@ -141,12 +141,25 @@ fun demo(){
         Spacer(modifier = Modifier.height(50.dp))
         //Intent
         Button(onClick = {
-            mContext.startActivity(Intent(mContext,ImageActivity::class.java))
+            mContext.startActivity(Intent(mContext,IntentActivity::class.java))
 
         },
         shape = CutCornerShape(5.dp),
         colors = ButtonDefaults.buttonColors(Color.DarkGray),
         modifier = Modifier.padding(start = 150.dp)
+        ) {
+            Text(text = "Go to Intents", color = Color.White, fontSize = 20.sp)
+
+        }
+        Spacer(modifier = Modifier.height(50.dp))
+        //Intent
+        Button(onClick = {
+            mContext.startActivity(Intent(mContext,ImageActivity::class.java))
+
+        },
+            shape = CutCornerShape(5.dp),
+            colors = ButtonDefaults.buttonColors(Color.DarkGray),
+            modifier = Modifier.padding(start = 150.dp)
         ) {
             Text(text = "Next", color = Color.White, fontSize = 20.sp)
 

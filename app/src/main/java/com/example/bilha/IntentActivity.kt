@@ -7,6 +7,7 @@ import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -229,19 +230,6 @@ fun myIntent(){
            Text(text = "SETTINGS", color = Color.Black, fontSize = 20.sp)
        }
 
-       Spacer(modifier = Modifier.height(50.dp))
-       //Intent
-       Button(onClick = {
-           mContext.startActivity(Intent(mContext,PracticalActivity::class.java))
-
-       },
-           shape = CutCornerShape(5.dp),
-           colors = ButtonDefaults.buttonColors(Color.DarkGray),
-           modifier = Modifier.padding(start = 150.dp)
-       ) {
-           Text(text = "Next", color = Color.White, fontSize = 20.sp)
-
-       }
 
    }
 

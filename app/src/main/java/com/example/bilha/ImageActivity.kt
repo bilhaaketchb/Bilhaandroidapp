@@ -61,7 +61,7 @@ fun myimage() {
     )
     {
         //TopAppBar
-        TopAppBar(title = {Text(text = "FormPage", fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif )},
+        TopAppBar(title = {Text(text = "ImagePage", fontWeight = FontWeight.Bold, fontFamily = FontFamily.SansSerif )},
             colors= TopAppBarDefaults.largeTopAppBarColors(Color.Cyan),
             navigationIcon = {
                 IconButton(onClick = {
