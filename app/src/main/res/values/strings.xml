@@ -10,4 +10,5 @@
     <string name="title_activity_home_page">HomePageActivity</string>
     <string name="title_activity_location">LocationActivity</string>
     <string name="title_activity_loan">loanActivity</string>
+    <string name="title_activity_loan_actyvity">LoanActyvity</string>
 </resources>

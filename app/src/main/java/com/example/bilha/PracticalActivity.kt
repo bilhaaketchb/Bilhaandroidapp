@@ -163,8 +163,9 @@ fun work() {
             Row(
                 modifier = Modifier
                     .padding(start = 10.dp)
-                    .horizontalScroll(rememberScrollState())
-            ) {
+                    .horizontalScroll(rememberScrollState())) {
+
+                //card1
                 Card() {
                     Column {
                         Image(
@@ -197,6 +198,7 @@ fun work() {
                 }
                 Spacer(modifier = Modifier.width(15.dp))
 
+                //card2
                 Card() {
                     Column {
                         Image(
@@ -228,6 +230,7 @@ fun work() {
 
                 }
                 Spacer(modifier = Modifier.width(15.dp))
+                //card3
                 Card() {
                     Column {
                         Image(
@@ -273,14 +276,14 @@ fun work() {
                 Card() {
                     Column {
                         Image(
-                            painter = painterResource(id = R.drawable.img_29),
+                            painter = painterResource(id = R.drawable.img_34),
                             contentDescription = "",
                             modifier = Modifier.size(180.dp)
                         )
 
-                        Text(text = "Name:Alison", fontSize = 15.sp)
-                        Text(text = "Origin:NewYork", fontSize = 15.sp)
-                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Text(text = "Name:Brown leather jacket", fontSize = 15.sp)
+                        Text(text = "Origin:CANADA", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.2600", fontSize = 15.sp)
                         Button(
                             onClick = {
                                 val simToolkitLaunchIntent =
@@ -306,14 +309,14 @@ fun work() {
                 Card() {
                     Column {
                         Image(
-                            painter = painterResource(id = R.drawable.img_29),
+                            painter = painterResource(id = R.drawable.img_35),
                             contentDescription = "",
                             modifier = Modifier.size(180.dp)
                         )
 
-                        Text(text = "Name:Alison", fontSize = 15.sp)
-                        Text(text = "Origin:NewYork", fontSize = 15.sp)
-                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Text(text = "Name:Grey leather jacket", fontSize = 15.sp)
+                        Text(text = "Origin:USA", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.2500", fontSize = 15.sp)
                         Button(
                             onClick = {
                                 val simToolkitLaunchIntent =
@@ -339,14 +342,14 @@ fun work() {
                 Card() {
                     Column {
                         Image(
-                            painter = painterResource(id = R.drawable.img_29),
+                            painter = painterResource(id = R.drawable.img_36),
                             contentDescription = "",
                             modifier = Modifier.size(180.dp)
                         )
 
-                        Text(text = "Name:Alison", fontSize = 15.sp)
+                        Text(text = "Name:Black leather jacket", fontSize = 15.sp)
                         Text(text = "Origin:NewYork", fontSize = 15.sp)
-                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.2000", fontSize = 15.sp)
                         Button(
                             onClick = {
                                 val simToolkitLaunchIntent =
@@ -382,12 +385,12 @@ fun work() {
                 Card() {
                     Column {
                         Image(
-                            painter = painterResource(id = R.drawable.img_29),
+                            painter = painterResource(id = R.drawable.img_37),
                             contentDescription = "",
                             modifier = Modifier.size(180.dp)
                         )
 
-                        Text(text = "Name:Alison", fontSize = 15.sp)
+                        Text(text = "Name:Sleeveless Pink Dress", fontSize = 15.sp)
                         Text(text = "Origin:NewYork", fontSize = 15.sp)
                         Text(text = "Price;Ksh.6000", fontSize = 15.sp)
                         Button(
@@ -415,14 +418,14 @@ fun work() {
                 Card() {
                     Column {
                         Image(
-                            painter = painterResource(id = R.drawable.img_29),
+                            painter = painterResource(id = R.drawable.img_38),
                             contentDescription = "",
                             modifier = Modifier.size(180.dp)
                         )
 
-                        Text(text = "Name:Alison", fontSize = 15.sp)
-                        Text(text = "Origin:NewYork", fontSize = 15.sp)
-                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Text(text = "Name:Pink Dress", fontSize = 15.sp)
+                        Text(text = "Origin:USA", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.2000", fontSize = 15.sp)
                         Button(
                             onClick = {
                                 val simToolkitLaunchIntent =
@@ -450,14 +453,14 @@ fun work() {
                 Card() {
                     Column {
                         Image(
-                            painter = painterResource(id = R.drawable.img_29),
+                            painter = painterResource(id = R.drawable.img_39),
                             contentDescription = "",
                             modifier = Modifier.size(180.dp)
                         )
 
-                        Text(text = "Name:Alison", fontSize = 15.sp)
-                        Text(text = "Origin:NewYork", fontSize = 15.sp)
-                        Text(text = "Price;Ksh.6000", fontSize = 15.sp)
+                        Text(text = "Name:Black Dress", fontSize = 15.sp)
+                        Text(text = "Origin:USA", fontSize = 15.sp)
+                        Text(text = "Price;Ksh.2000", fontSize = 15.sp)
                         Button(
                             onClick = {
                                 val simToolkitLaunchIntent =

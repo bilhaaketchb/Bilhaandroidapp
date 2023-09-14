@@ -1,6 +1,7 @@
 package com.example.bilha
 
 import android.content.Intent
+import android.location.Location
 import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.ComponentActivity
@@ -109,7 +110,7 @@ fun myLottie(){
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
-            mContext.startActivity(Intent(mContext, FormActivity::class.java))
+            mContext.startActivity(Intent(mContext, LocationActivity::class.java))
 
         },
         modifier = Modifier.padding(120.dp),
